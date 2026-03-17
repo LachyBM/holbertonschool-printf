@@ -74,10 +74,16 @@ unsigned int puint(unsigned int unum)
   char c;
 
   if (unum >= 10)
-    length += _print_int(unum / 10);
+    length += puint(unum / 10);
   c = (unum % 10) + '0';
   write(1, &c, 1);
   length++;
 
   return (length);
 }
+
+const char *escape(const char *format)
+{
+  const char *c = format;
+  return (c);
+    }

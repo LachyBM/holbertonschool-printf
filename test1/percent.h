@@ -10,7 +10,7 @@ char_check chartypes[] = {
 {f, "float", pfloat},
 {u, "unsigned int", puint},
 {s, "string", pstring}
-}
+};
 
  while (format && format[i])
    {
