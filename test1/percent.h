@@ -16,7 +16,7 @@ char_check chartypes[] = {
    {
      i++;
      k = 0;
-     while (chartypes[k])
+     while (chartypes[k].symbol)
        {
 	 if (format[i] == chartypes[k].symbol)
 	   {

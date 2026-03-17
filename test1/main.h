@@ -15,12 +15,12 @@ void pfloat(va_list args);
 int pstring(char *string);
 unsigned int puint(unsigned int unum);
 const char *escape(const char *format);
-int pspec(const char *format, int i);
+int pspec(const char *format, int i, char_check *specchar);
 
 typedef struct specchar
 {
   char symbol;
-  const char (*action)(const char *format);
+  int (*action)(char *);
   int (*escape)(const char *format, int);
 } char_check;
 

@@ -7,7 +7,7 @@
 
 int pchar(char *c)
 {
-  write(1, &c, 1);
+  write(1, c, 1);
   return (1);
 }
 
@@ -82,8 +82,8 @@ unsigned int puint(unsigned int unum)
   return (length);
 }
 
-const char *escape(const char *format)
+int *escape(char *c)
 {
-  const char *c = format;
+  c = format;
   return (c);
     }
