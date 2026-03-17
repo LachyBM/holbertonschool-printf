@@ -64,3 +64,43 @@ int _print_char(char *c)
 	write(1, &c, 1);
 	return (1);
 }
+
+unsigned int _print_hex(unsigned int hex, int upper)
+{
+	int length = 0;
+	char c;
+	char *hexnum;
+	
+	if (upper == 1)
+	{
+		hexnum = "0123456789ABCDEF";
+	}
+	else
+	{
+		hexnum = "0123456789abcdef";
+	}
+	if (hex >= 16)
+		length += _print_hex(hex/16, upper);
+	c = hexnum[hex % 16];
+	write(1, &c, 1);
+	length++;
+
+	return (length);
+}
+
+unsigned int _print_oct(unsigned int oct)
+{
+	int length = 0;
+        char c;
+        char *octnum = "01234567";
+
+        if (oct >= 8)
+                length += _print_oct(oct/8);
+        c = octnum[oct % 8];
+        write(1, &c, 1);
+	length++;
+
+        return (length);
+}
+
+

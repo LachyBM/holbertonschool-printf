@@ -37,18 +37,29 @@ int _switch(char sign, va_list ap)
                         return (_print_char(c));
                 }
                 case 'x':
+		{
+			unsigned int hex = va_arg(ap,unsigned int);
+			return(_print_hex(hex,0));
+		}	
                 case 'X':
-                        write(1, "x", 1);
-                        return (1);
+                {
+                        unsigned int hex = va_arg(ap,unsigned int);
+                        return(_print_hex(hex,1));
+                }
+                       
                 case 'p':
                         write(1, "p", 1);
                         return (1);
                 case 'o':
-                        write(1 , "o", 1);
-                        return (1);
-                case '%':
-                        write(1, "%", 1);
+		{
+                      	unsigned int oct = va_arg(ap, unsigned int);
+                 	return(_print_oct(oct));
+		}
+		case '%':
+			{
+                      	write(1, "%", 1);		
                         return(1);
+			}
                 default:
                         write(1, "%", 1);
                         write(1, &sign, 1);
