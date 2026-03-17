@@ -5,23 +5,41 @@
 #include <stdlib.h>
 #include <unistd.h>
 #include "printer.h"
+#include "percent.h"
 
+/**
+ *_printf-main function
+ *@format:a string
+ *Return:printf behaviour
+ */
 
 int _printf(const char *format, ...);
-int percent(int i, const char *format, va_list args);
-int pint(int num);
-int pchar(char *c);
-void pfloat(va_list args);
-int pstring(char *string);
-unsigned int puint(unsigned int unum);
-const char *escape(const char *format);
-int pspec(const char *format, int i, char_check *specchar);
+
+/**
+ * Helper Functions
+ */
+
+int pchar(va_list args);
+int pstring(va_list args);
+int pint(va_list args);
+int puint(va_list args);
+int poct(va_list args);
+int percent(va_list args);
+
+/**
+ * Escape
+ */
+
+/** int escape(char c); */
+
+/**
+ * Struct Mapping Specifiers to Handlers
+ */
 
 typedef struct specchar
 {
   char symbol;
-  int (*action)(char *);
-  int (*escape)(const char *format, int);
+  int (*handler)(va_list args);
 } char_check;
 
 #endif

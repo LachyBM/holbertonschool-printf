@@ -1,4 +1,5 @@
 #include "main.c"
+#include "main.h"
 
 int _printf(const char *format, ...)
 {

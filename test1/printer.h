@@ -5,10 +5,10 @@
  *@c:a string
  */
 
-int pchar(char *c)
+int pchar(va_list args)
 {
-  write(1, c, 1);
-  return (1);
+  char c = va_arg(args, int);
+  return (write(1, &c, 1));
 }
 
 /**
@@ -68,22 +68,44 @@ int pstring(char *string)
  *@unum:unsigned int
  */
 
-unsigned int puint(unsigned int unum)
+unsigned int puint(va_list args)
 {
-  int length = 0;
+  int len = 0;
   char c;
+  unsigned int num = va_arg(args, unsigned int)
 
-  if (unum >= 10)
-    length += puint(unum / 10);
-  c = (unum % 10) + '0';
+  if (num >= 10)
+    len += puint(num / 10);
+  c = (num % 10) + '0';
   write(1, &c, 1);
-  length++;
+  len++;
 
-  return (length);
+  return (len);
 }
 
-int *escape(char *c)
+/**
+ *Print unsigned integer as octal
+ */
+
+int poct(va_list args)
 {
-  c = format;
-  return (c);
+  unsigned int num = va_arg(args, unsigned int);
+  char c;
+  int len = 0;
+
+  if (num >= 8)
+    len += poct(num / 8);
+  c = (num % 8) + '0';
+  write(1, &c, 1);
+  len++;
     }
+return (len);
+}
+
+
+
+int percent(va_list args)
+{
+(void)args;
+return (write(1, "%", 1));
+}
