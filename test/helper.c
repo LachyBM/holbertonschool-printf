@@ -49,3 +49,18 @@ unsigned int _print_uint(unsigned int unum)
 	return (length);
 }
 
+int _print_string(char *string)
+{
+	int length = 0;
+
+	while(string[length])
+		length++;
+	write(1, string, length);
+	return (length);
+}
+
+int _print_char(char *c)
+{
+	write(1, &c, 1);
+	return (1);
+}
