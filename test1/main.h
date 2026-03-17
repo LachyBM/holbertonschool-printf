@@ -5,6 +5,9 @@
 #include <stdlib.h>
 #include <unistd.h>
 
+int _printf(const char *format, ...);
+int percent(int i, const char *format, va_list args);
+
 typedef struct specchar
 {
   char symbol;
