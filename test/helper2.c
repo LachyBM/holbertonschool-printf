@@ -1,0 +1,58 @@
+#include "main.h"
+#include <stdarg.h>
+#include <stdio.h>
+#include <unistd.h>
+
+/**
+* _switch
+* @sign: the ident of incoming
+* @ap: 
+* Return:
+*/
+
+int _switch(char sign, va_list ap)
+{
+        switch (sign)
+        {
+                case 'd':
+                case 'i':
+                {
+                        int num = va_arg(ap, int);
+                        return (_print_int(num));
+
+                }
+                case 'u':
+                {
+                        unsigned int unum = va_arg(ap, unsigned int);
+                        return (_print_uint(unum));
+                }
+                case 's':
+                {
+                        write(1, "s", 1);
+                        return (1);
+                }
+                        case 'c':
+                {
+                        char *c = va_arg(ap, char*);
+                        write(1, &c, 1);
+                        return (1);
+                }
+                case 'x':
+                case 'X':
+                        write(1, "x", 1);
+                        return (1);
+                case 'p':
+                        write(1, "p", 1);
+                        return (1);
+                case 'o':
+                        write(1 , "o", 1);
+                        return (1);
+                case '%':
+                        write(1, "%", 1);
+                        return(1);
+                default:
+                        write(1, "%", 1);
+                        write(1, &sign, 1);
+                        return (2);
+        }
+}
