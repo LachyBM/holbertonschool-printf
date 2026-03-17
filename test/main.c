@@ -16,7 +16,7 @@ int main(void)
     void *addr;
 
     printf("============================================================\n");
-    len = _printf("Let's try to printf a simple sentence. OURS\n");
+    len = _printf("Let's try to printf a simple sentence.\n");
     len2 = printf("Let's try to printf a simple sentence.\n");
     printf("============================================================\n");
     ui = (unsigned int)INT_MAX + 1024;
@@ -48,7 +48,7 @@ int main(void)
     len = _printf("Percent:[%%] OURS\n");
     len2 = printf("Percent:[%%]\n");
     printf("============================================================\n");
-    _printf("Len:[%d] OURS\n", len);
+    _printf("Len:[%d]\n", len);
     printf("Len:[%d]\n", len2);
     printf("============================================================\n");
     _printf("Unknown:[%r] OURS\n");
