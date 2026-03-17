@@ -18,9 +18,9 @@ main.h | header with prototypes
 main.c | testing printf
 
 simple sentence | YES
-%d | NO
-%i | NO
-%u | NO
+%d | YES
+%i | YES
+%u | YES
 %o | NO
 %x | NO
 %X | NO
@@ -29,3 +29,5 @@ simple sentence | YES
 %p | NO
 %% | NO
 %r | NO
+
+NOTE: length counts fail for when % before value
