@@ -28,14 +28,13 @@ int _switch(char sign, va_list ap)
                 }
                 case 's':
                 {
-                        write(1, "s", 1);
-                        return (1);
+                        char *string = va_arg(ap,char *);
+                        return (_print_string(string));
                 }
-                        case 'c':
+                case 'c':
                 {
-                        char *c = va_arg(ap, char*);
-                        write(1, &c, 1);
-                        return (1);
+                       	char *c = va_arg(ap, char *);
+                        return (_print_char(c));
                 }
                 case 'x':
                 case 'X':
