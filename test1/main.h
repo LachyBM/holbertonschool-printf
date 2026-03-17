@@ -5,4 +5,11 @@
 #include <stdlib.h>
 #include <unistd.h>
 
+typedef struct specchar
+{
+  char symbol;
+  void (*action)(va_list);
+  void (*escape)(va_list);
+}char_check;
+
 #endif
