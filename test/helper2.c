@@ -48,8 +48,10 @@ int _switch(char sign, va_list ap)
                 }
                        
                 case 'p':
-                        write(1, "p", 1);
-                        return (1);
+		{
+                        void *addr = va_arg(ap, void *);
+                        return (_print_address(addr));
+		}
                 case 'o':
 		{
                       	unsigned int oct = va_arg(ap, unsigned int);

@@ -65,7 +65,7 @@ int _print_char(char *c)
 	return (1);
 }
 
-unsigned int _print_hex(unsigned int hex, int upper)
+unsigned int _print_hex(unsigned long hex, int upper)
 {
 	int length = 0;
 	char c;
@@ -103,4 +103,21 @@ unsigned int _print_oct(unsigned int oct)
         return (length);
 }
 
+unsigned int _print_address(void *addr)
+{
+	int length = 0;
+	char c;
+	char *hexnum = "0123456789abcdef";
 
+	unsigned long paddr = (unsigned long)addr;
+	write(1, "0x",2);
+	length =+ 2;
+
+        if (paddr>= 16)
+                length += _print_hex(paddr/16, 0);
+        c = hexnum[paddr % 16];
+        write(1, &c, 1);
+        length++;
+
+        return (length);
+}
