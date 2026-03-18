@@ -21,13 +21,13 @@ simple sentence | YES
 %d | YES
 %i | YES
 %u | YES
-%o | NO
-%x | NO
-%X | NO
-%c | NO
-%s | NO
-%p | NO
-%% | NO
-%r | NO
+%o | YES
+%x | YES
+%X | YES
+%c | YES
+%s | YES
+%p | YES
+%% | YES?
+%r | YES?
 
 NOTE: length counts fail for when % before value
