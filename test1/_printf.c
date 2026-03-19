@@ -11,6 +11,9 @@ int _printf(const char *format, ...)
     {'s', pstring},
     {'d', pint},
     {'i', pint},
+    {'u', puint},
+    {'x', phexl},
+    {'X', phexu},
   };
 
   if (format == NULL)
