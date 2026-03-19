@@ -38,5 +38,6 @@ char_check specchar[] = {
   {'X', phexu},
   {'b', pbin},
   {'o', poct},
-  {'p', paddr}
+  {'p', paddr},
+  {'\0', NULL}
 };
