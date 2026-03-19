@@ -30,7 +30,6 @@ int _printf(const char *format, ...)
 	      if (format[i+1] == specchar[j].symbol)
 		{
 		  total += specchar[j].helper(args);
-		  matched = 1;
 		  break;
 		}
 	      j++;
