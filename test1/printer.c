@@ -68,10 +68,19 @@ int puint(va_list args)
 }
 
 /**
- *Print a Hex int
+ *Print a lowercase Hex int
  */
-int phex(va_list args)
+int phexl(va_list args)
 {
   unsigned int n = va_arg(args, unsigned int);
   return (print_hex(n, 0));
+}
+
+/**
+ *Print an uppercase Hex int
+ */
+int phexu(va_list args)
+{
+  unsigned int n = va_arg(args, unsigned int);
+  return (print_hex(n, 1));
 }
