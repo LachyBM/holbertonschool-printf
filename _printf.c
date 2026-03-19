@@ -35,6 +35,12 @@ int _printf(const char *format, ...)
 		}
 	      j++;
 	    }
+	  if (specchar[j].symbol == '\0')
+	    {
+	      write(1, "%", 1);
+	      write(1, &format[i], 1);
+	      total += 2;
+	    }
 	}
       else
 	{
