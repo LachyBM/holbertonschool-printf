@@ -1,4 +1,3 @@
-#include "main.c"
 #include "main.h"
 
 int _printf(const char *format, ...)
@@ -35,7 +34,7 @@ int _printf(const char *format, ...)
       else
 	{
 	  write (1, &format[i], 1);
-	  count++;
+	  total++;
 	}
       i++;
     }
