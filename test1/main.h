@@ -18,7 +18,8 @@ int percent(va_list args);
 int puint(va_list args);
 int phexu(va_list args);
 int phexl(va_list args);
-	  
+int pbin(va_list args);
+
 /**
  * Print_Numbers Functions
  */
@@ -27,6 +28,7 @@ int print_digit(int d);
 int print_number(long n);
 int print_uns(unsigned int n);
 int print_hex(unsigned int n, int uppercase);
+int print_bin(unsigned int n);
 	  
 /**
  * Struct Mapping Specifiers to Handlers

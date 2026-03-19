@@ -14,6 +14,7 @@ int _printf(const char *format, ...)
     {'u', puint},
     {'x', phexl},
     {'X', phexu},
+    {'b', pbin}
   };
 
   if (format == NULL)
