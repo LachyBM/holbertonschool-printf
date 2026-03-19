@@ -24,6 +24,8 @@ int _printf(const char *format, ...)
 	{
 	  i++;
 	  j = 0;
+	  if (format[i] == '\0')
+	    return (-1);
 	  while (specchar[j].symbol)
 	    {
 	      if (format[i] == specchar[j].symbol)
