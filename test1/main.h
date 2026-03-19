@@ -16,7 +16,8 @@ int pstring(va_list args);
 int pint(va_list args);
 int percent(va_list args);
 int puint(va_list args);
-int phex(va_list args);
+int phexu(va_list args);
+int phexl(va_list args);
 	  
 /**
  * Print_Numbers Functions
