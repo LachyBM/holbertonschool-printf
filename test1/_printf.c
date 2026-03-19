@@ -12,7 +12,10 @@ int _printf(const char *format, ...)
     {'d', pint},
     {'i', pint},
   };
-  
+
+  if (format == NULL)
+    return (-1);
+
   va_start(args, format);
 
   while (format && format[i])
@@ -21,6 +24,8 @@ int _printf(const char *format, ...)
 	{
 	  i++;
 	  j = 0;
+	  if (format[i] == '\0')
+	    return (-1);
 	  while (specchar[j].symbol)
 	    {
 	      if (format[i] == specchar[j].symbol)
@@ -29,6 +34,12 @@ int _printf(const char *format, ...)
 		  break;
 		}
 	      j++;
+	    }
+	  if (specchar[j].symbol == '\0')
+	    {
+	      write(1, "%", 1);
+	      write(1, &format[i], 1);
+	      total += 2;
 	    }
 	}
       else
