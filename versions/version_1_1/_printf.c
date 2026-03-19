@@ -24,7 +24,7 @@ int _printf(const char *format, ...)
 	    {
 	      if (format[i] == specchar[j].symbol)
 		{
-		  total += specchar[j].helper(args, buffer, buf_i);
+		  total += specchar[j].helper(args, buffer, &buf_i);
 		  break;
 		}
 	      j++;
