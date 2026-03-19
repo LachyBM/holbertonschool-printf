@@ -4,14 +4,6 @@
 #include <stdarg.h>
 #include <stdlib.h>
 #include <unistd.h>
-#include "printer.h"
-#include "percent.h"
-
-/**
- *_printf-main function
- *@format:a string
- *Return:printf behaviour
- */
 
 int _printf(const char *format, ...);
 
@@ -22,8 +14,6 @@ int _printf(const char *format, ...);
 int pchar(va_list args);
 int pstring(va_list args);
 int pint(va_list args);
-int puint(va_list args);
-int poct(va_list args);
 int percent(va_list args);
 
 /**
@@ -39,7 +29,7 @@ int percent(va_list args);
 typedef struct specchar
 {
   char symbol;
-  int (*handler)(va_list args);
+  int (*helper)(va_list args);
 } char_check;
 
 #endif
