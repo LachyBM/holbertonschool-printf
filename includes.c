@@ -1,4 +1,22 @@
 /**
+ *Specifier Array
+ */
+char_check specchar[] = {
+  {'%', percent},
+  {'c', pchar},
+  {'s', pstring},
+  {'d', pint},
+  {'i', pint},
+  {'u', puint},
+  {'x', phexl},
+  {'X', phexu},
+  {'b', pbin},
+  {'o', poct},
+  {'p', paddr},
+  {'\0', NULL}
+};
+
+/**
  *Handler C Files
  */
 
@@ -23,21 +41,3 @@
 #include "helpers/print_binary.c"
 #include "helpers/print_oct.c"
 #include "helpers/print_addr.c"
-
-/**
- *Specifier Array
- */
-char_check specchar[] = {
-  {'%', percent},
-  {'c', pchar},
-  {'s', pstring},
-  {'d', pint},
-  {'i', pint},
-  {'u', puint},
-  {'x', phexl},
-  {'X', phexu},
-  {'b', pbin},
-  {'o', poct},
-  {'p', paddr},
-  {'\0', NULL}
-};
