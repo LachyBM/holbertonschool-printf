@@ -10,6 +10,8 @@
 #include "handlers/phexu.c"
 #include "handlers/pbin.c"
 #include "handlers/percent.c"
+#include "handlers/poct.c"
+#include "handlers/paddr.c"
 
 /**
  *Helper C Files
@@ -19,6 +21,8 @@
 #include "helpers/print_unsigned.c"
 #include "helpers/print_hexadecimal.c"
 #include "helpers/print_binary.c"
+#include "helpers/print_oct.c"
+#include "helpers/print_addr.c"
 
 /**
  *Specifier Array
@@ -32,5 +36,7 @@ char_check specchar[] = {
   {'u', puint},
   {'x', phexl},
   {'X', phexu},
-  {'b', pbin}
+  {'b', pbin},
+  {'o', poct},
+  {'p', paddr}
 };
