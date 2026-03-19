@@ -3,7 +3,7 @@
 int _printf(const char *format, ...)
 {
   va_list args;
-  int total = 0, i = 0, j;
+  int total = 0, i = 0, j, matched = 0;
 
   char_check specchar[] = {
     {'%', percent},
@@ -22,18 +22,24 @@ int _printf(const char *format, ...)
     {
       if (format[i] == '%')
 	{
-	  i++;
 	  j = 0;
-	  if (format[i] == '\0')
+	  if (format[i+1] == '\0')
 	    return (-1);
 	  while (specchar[j].symbol)
 	    {
-	      if (format[i] == specchar[j].symbol)
+	      if (format[i+1] == specchar[j].symbol)
 		{
 		  total += specchar[j].helper(args);
+		  matched = 1;
 		  break;
 		}
 	      j++;
+	    }
+	  if (!matched)
+	    {
+	      write(1, &format[i], 1);
+	      i++;
+	      write(1, &format[i], 1);
 	    }
 	}
       else
