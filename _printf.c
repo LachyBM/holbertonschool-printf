@@ -15,19 +15,18 @@ int _printf(const char *format, ...)
 
   if (format == NULL)
     return (-1);
-  
+
   va_start(args, format);
 
   while (format && format[i])
     {
       if (format[i] == '%')
 	{
+	  i++;
 	  j = 0;
-	  if (format[i+1] == '\0')
-	    return (-1);
 	  while (specchar[j].symbol)
 	    {
-	      if (format[i+1] == specchar[j].symbol)
+	      if (format[i] == specchar[j].symbol)
 		{
 		  total += specchar[j].helper(args);
 		  break;
