@@ -2,7 +2,7 @@
 /**
  *Print Binary Number
  */
-int print_bin(char *buffer, int buf_i, unsigned int n)
+int print_bin(char *buffer, int *buf_i, unsigned int n)
 {
   int count = 0;
   char c;

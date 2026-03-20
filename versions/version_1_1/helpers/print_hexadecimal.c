@@ -2,7 +2,7 @@
 /**
  *Print Hex Number
  */
-int print_hex(char *buffer, int buf_i, unsigned long int n, int uppercase)
+int print_hex(char *buffer, int *buf_i, unsigned long int n, int uppercase)
 {
   int count = 0;
   char *digits;

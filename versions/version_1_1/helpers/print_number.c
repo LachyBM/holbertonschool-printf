@@ -2,7 +2,7 @@
 /**
  *Prints a digit
  */
-int print_digit(char *buffer, int buf_i, int d)
+int print_digit(char *buffer, int *buf_i, int d)
 {
   char c = d + '0';
   return (buffer_write(buffer, buf_i, c));
@@ -11,7 +11,7 @@ int print_digit(char *buffer, int buf_i, int d)
 /**
  *Prints a number
  */
-int print_number(char *buffer, int buf_i, long n)
+int print_number(char *buffer, int *buf_i, long n)
 {
   int count = 0;
 

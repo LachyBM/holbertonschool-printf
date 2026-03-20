@@ -2,7 +2,7 @@
 /**
  *Prints an Oct
  */
-int print_oct(char *buffer, int buf_i, unsigned int n)
+int print_oct(char *buffer, int *buf_i, unsigned int n)
 {
   int count = 0;
   char c;

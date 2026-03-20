@@ -3,7 +3,7 @@
 /**
  *Prints an Address
  */
-int print_addr(char *buffer, int buf_i, void *addr)
+int print_addr(char *buffer, int *buf_i, void *addr)
 {
   int count = 0;
   unsigned long paddr = (unsigned long)addr;

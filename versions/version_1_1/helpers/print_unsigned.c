@@ -2,7 +2,7 @@
 /**
  *Prints unsigned number
  */
-int print_uns(char *buffer, int buf_i, unsigned int n)
+int print_uns(char *buffer, int *buf_i, unsigned int n)
 {
   int count = 0;
 
