@@ -5,53 +5,63 @@ int _printf(const char *format, ...)
   va_list args;
   int total = 0, i = 0, j;
   char buffer[1024];
-  int buf_i = 0;
+  int x = 0, matched;
+  int *buf_i = &x;
 
   if (format == NULL)
     return (-1);
 
   va_start(args, format);
 
-  while (format && format[i])
+  while (format[i])
     {
-      if (format[i] == '%')
+    if (format[i] == '%')
 	{
 	  i++;
 	  j = 0;
+	  matched = 0;
+	
 	  if (format[i] == '\0')
 	    return (-1);
-	  while (specchar[j].symbol)
-	    {
-	      if (format[i] == specchar[j].symbol)
+	if (*buf_i > 0)
+	{
+		write(1, buffer, *buf_i);
+		total += *buf_i;
+		*buf_i = 0;
+	}
+	while (specchar[j].symbol)
+	{
+	    if (format[i] == specchar[j].symbol)
 		{
-		  total += specchar[j].helper(args, buffer, &buf_i);
+		  total += specchar[j].helper(args, buffer, buf_i);
+		  matched = 1;
 		  break;
 		}
-	      j++;
-	    }
-	  if (specchar[j].symbol == '\0')
+	j++;
+	}
+	  if (!matched)
 	    {
-	      write(1, "%", 1);
-	      write(1, &format[i], 1);
-	      total += 2;
+		write(1, "%", 1);
+	    write(1, &format[i], 1);
+	    total += 2;
 	    }
 	}
       else
 	{
-	  buffer[buf_i++] = format[i];
-	  if (buf_i == 1024)
+	  buffer[(*buf_i)++] = format[i];
+	  if (*buf_i == 1024)
 	    {
-	      write (1, buffer, buf_i);
-	      total += buf_i;
-	      buf_i = 0;
+	      write (1, buffer, *buf_i);
+	      total += *buf_i;
+	      *buf_i = 0;
 	    }
-	  i++;
 	}
+	i++;
     }
-  if (buf_i > 0)
+  if (*buf_i > 0)
     {
-      write(1, buffer, buf_i);
-      total += buf_i;
+      write(1, buffer, *buf_i);
+      total += *buf_i;
     }
   va_end(args);
   return (total);

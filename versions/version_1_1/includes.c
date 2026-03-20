@@ -3,13 +3,13 @@
  */
 
 #include "handlers/pchar.c"
+#include "handlers/percent.c"
 #include "handlers/pstring.c"
 #include "handlers/pint.c"
 #include "handlers/puint.c"
 #include "handlers/phexl.c"
 #include "handlers/phexu.c"
 #include "handlers/pbin.c"
-#include "handlers/percent.c"
 #include "handlers/poct.c"
 #include "handlers/paddr.c"
 #include "handlers/buffer_write.c"
