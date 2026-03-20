@@ -2,7 +2,7 @@
 /**
  *Print a Char *
  */
-int pstring(va_list args, char *buffer, int *buf_i)
+int pstring(va_list args, char *buffer, int *buf_i, int *total)
 {
   char *str = va_arg(args, char *);
   int len = 0;
@@ -15,7 +15,7 @@ int pstring(va_list args, char *buffer, int *buf_i)
     len++;
   while (i < len)
     {
-      buffer_write(buffer, buf_i, str[i]);
+      buffer_write(buffer, buf_i, str[i], total);
       i++;
     }
   return (0);

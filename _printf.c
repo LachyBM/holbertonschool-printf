@@ -3,10 +3,10 @@
 int _printf(const char *format, ...)
 {
   va_list args;
-  int total = 0, i = 0, j;
+  int i = 0, j;
   char buffer[1024];
-  int x = 0, matched;
-  int *buf_i = &x;
+  int x = 0, y = 0, matched;
+  int *buf_i = &x, *total = &y;
 
   if (format == NULL)
     return (-1);
@@ -23,17 +23,11 @@ int _printf(const char *format, ...)
 	
 	  if (format[i] == '\0')
 	    return (-1);
-	/*if (*buf_i > 0)
-	{
-		write(1, buffer, *buf_i);
-		total += *buf_i;
-		*buf_i = 0;
-	}*/
 	while (specchar[j].symbol)
 	{
 	    if (format[i] == specchar[j].symbol)
 		{
-		  total += specchar[j].helper(args, buffer, buf_i);
+		  specchar[j].helper(args, buffer, buf_i, total);
 		  matched = 1;
 		  break;
 		}
@@ -41,18 +35,18 @@ int _printf(const char *format, ...)
 	}
 	  if (!matched)
 	    {
-		buffer_write(buffer, buf_i, '%');
-	    buffer_write(buffer, buf_i, format[i]);
-	    total += 2;
+		buffer_write(buffer, buf_i, '%', total);
+	    buffer_write(buffer, buf_i, format[i], total);
+	    *total += 2;
 	    }
 	}
       else
 	{
-	  buffer[(*buf_i)++] = format[i];
+	  buffer_write(buffer, buf_i, format[i], total);
 	  if (*buf_i == 1024)
 	    {
 	      write (1, buffer, *buf_i);
-	      total += *buf_i;
+	      *total += *buf_i;
 	      *buf_i = 0;
 	    }
 	}
@@ -61,8 +55,8 @@ int _printf(const char *format, ...)
   if (*buf_i > 0)
     {
       write(1, buffer, *buf_i);
-      total += *buf_i;
+      *total += *buf_i;
     }
   va_end(args);
-  return (total);
+  return (*total);
 }
