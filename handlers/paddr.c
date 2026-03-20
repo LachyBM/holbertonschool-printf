@@ -6,5 +6,6 @@
 int paddr(va_list args, char *buffer, int *buf_i)
 {
   void *n = va_arg(args, void*);
-  return (print_addr(buffer, buf_i, n));
+  print_addr(buffer, buf_i, n);
+  return (0);
 }

@@ -6,5 +6,6 @@
 int pchar(va_list args, char *buffer, int *buf_i)
 {
   char c = va_arg(args, int);
-  return (buffer_write(buffer, buf_i, c));
+  buffer_write(buffer, buf_i, c);
+  return (0);
 }

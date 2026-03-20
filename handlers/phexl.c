@@ -5,5 +5,6 @@
 int phexl(va_list args, char *buffer, int *buf_i)
 {
   unsigned int n = va_arg(args, unsigned int);
-  return (print_hex(buffer, buf_i, n, 0));
+  print_hex(buffer, buf_i, n, 0);
+  return (0);
 }

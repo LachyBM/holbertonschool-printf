@@ -18,5 +18,5 @@ int pint(va_list args, char *buffer, int *buf_i)
     count += print_number(buffer, buf_i, n / 10);
 
   count += print_digit(buffer, buf_i, n % 10);
-  return (count);
+  return (0);
 }
