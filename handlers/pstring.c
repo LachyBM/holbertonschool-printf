@@ -18,5 +18,5 @@ int pstring(va_list args, char *buffer, int *buf_i)
       buffer_write(buffer, buf_i, str[i]);
       i++;
     }
-  return len;
+  return (0);
 }
