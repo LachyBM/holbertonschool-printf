@@ -1,0 +1,26 @@
+DESCRIPTION
+
+_printf is a simplified version of the standard C printf. It prints formatted output to stdout, supporting a subset of the usual conversion specifiers, plus a few extras like binary.
+
+It keeps an internal buffer of 1024 bytes to reduce the number of system calls, which makes output more efficient.
+
+RETURN VALUE
+
+Returns the number of characters printed. If format is NULL or an error occurs, it returns -1.
+
+FORMAT SPECIFIERS
+
+Here’s what _printf can do:
+
+Specifier	Description
+%c	Print a single character.
+%s	Print a string. If the string is NULL, prints (null).
+%d, %i	Print a signed decimal integer.
+%u	Print an unsigned decimal integer.
+%o	Print an unsigned integer in octal.
+%x	Print an unsigned integer in lowercase hexadecimal.
+%X	Print an unsigned integer in uppercase hexadecimal.
+%b	Print an unsigned integer in binary.
+%p	Print a pointer (memory address) in hexadecimal with 0x prefix. If pointer is NULL, prints (nil).
+%%	Print a literal percent sign.
+Any other % followed by a character	Prints the literal % and the character (for unknown specifiers).
