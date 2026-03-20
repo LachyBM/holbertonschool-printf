@@ -23,12 +23,12 @@ int _printf(const char *format, ...)
 	
 	  if (format[i] == '\0')
 	    return (-1);
-	if (*buf_i > 0)
+	/*if (*buf_i > 0)
 	{
 		write(1, buffer, *buf_i);
 		total += *buf_i;
 		*buf_i = 0;
-	}
+	}*/
 	while (specchar[j].symbol)
 	{
 	    if (format[i] == specchar[j].symbol)
@@ -41,8 +41,8 @@ int _printf(const char *format, ...)
 	}
 	  if (!matched)
 	    {
-		write(1, "%", 1);
-	    write(1, &format[i], 1);
+		buffer_write(buffer, buf_i, '%');
+	    buffer_write(buffer, buf_i, format[i]);
 	    total += 2;
 	    }
 	}
