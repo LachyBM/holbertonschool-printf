@@ -4,20 +4,20 @@
  *Writes to the buffer for handler functions
  */
 
-int buffer_write(char *buffer, int buf_i, char c)
+int buffer_write(char *buffer, int *buf_i, char c)
 {
-  buffer[buf_i] = c;
-  (buf_i)++;
+  buffer[*buf_i] = c;
+  (*buf_i)++;
 
-  if (buf_i == 1024)
+  if (*buf_i == 1024)
     {
-      write(1, buffer, buf_i);
-      buf_i = 0;
+      write(1, buffer, *buf_i);
+      *buf_i = 0;
     }
   return (1);
 }
 
-int buffer_nil(char *buffer, int buf_i)
+int buffer_nil(char *buffer, int *buf_i)
 {
   buffer_write(buffer, buf_i, '(');
   buffer_write(buffer, buf_i, 'n');

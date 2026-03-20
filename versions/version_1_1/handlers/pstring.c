@@ -2,7 +2,7 @@
 /**
  *Print a Char *
  */
-int pstring(va_list args, char *buffer, int buf_i)
+int pstring(va_list args, char *buffer, int *buf_i)
 {
   char *str = va_arg(args, char *);
   int len = 0;

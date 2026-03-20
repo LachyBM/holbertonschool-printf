@@ -2,7 +2,7 @@
 /**
  *Print signed integer
  */
-int pint(va_list args, char *buffer, int buf_i)
+int pint(va_list args, char *buffer, int *buf_i)
 {
   long n = va_arg(args, int);
   int count = 0;
