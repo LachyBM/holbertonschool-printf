@@ -13,6 +13,7 @@
 #include "handlers/poct.c"
 #include "handlers/paddr.c"
 #include "handlers/buffer_write.c"
+#include "handlers/pspec.c"
 
 /**
  *Helper C Files
@@ -24,6 +25,7 @@
 #include "helpers/print_binary.c"
 #include "helpers/print_oct.c"
 #include "helpers/print_addr.c"
+#include "helpers/print_schar.c"
 
 /**
  *Specifier Array
@@ -40,5 +42,6 @@ char_check specchar[] = {
   {'b', pbin},
   {'o', poct},
   {'p', paddr},
+  {'S', pspec},
   {'\0', NULL}
 };
