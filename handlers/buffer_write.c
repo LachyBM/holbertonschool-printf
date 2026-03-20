@@ -26,3 +26,4 @@ int buffer_nil(char *buffer, int *buf_i)
   buffer_write(buffer, buf_i, ')');
   return (1);
 }
+

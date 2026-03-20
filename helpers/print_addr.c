@@ -5,7 +5,6 @@
  */
 int print_addr(char *buffer, int *buf_i, void *addr)
 {
-  int count = 0;
   unsigned long paddr = (unsigned long)addr;
 
   if (addr == NULL)
@@ -15,8 +14,7 @@ int print_addr(char *buffer, int *buf_i, void *addr)
   
   buffer_write(buffer, buf_i, '0');
   buffer_write(buffer, buf_i, 'x');
-  count += 2;
-  count += print_hex(buffer, buf_i, paddr, 0);
+  print_hex(buffer, buf_i, paddr, 0);
 
-  return (count);
+  return (0);
 }
