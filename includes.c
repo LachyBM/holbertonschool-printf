@@ -14,6 +14,8 @@
 #include "handlers/paddr.c"
 #include "handlers/buffer_write.c"
 #include "handlers/pspec.c"
+#include "handlers/prev.c"
+#include "handlers/prot13.c"
 
 /**
  *Helper C Files
@@ -26,6 +28,7 @@
 #include "helpers/print_oct.c"
 #include "helpers/print_addr.c"
 #include "helpers/print_schar.c"
+#include "helpers/print_rot13.c"
 
 /**
  *Specifier Array
@@ -43,5 +46,7 @@ char_check specchar[] = {
   {'o', poct},
   {'p', paddr},
   {'S', pspec},
+  {'R', prot13},
+  {'r', prev},
   {'\0', NULL}
 };

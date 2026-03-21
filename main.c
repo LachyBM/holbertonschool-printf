@@ -38,8 +38,9 @@ int main(void)
   len2 = printf("Percent:[%%]\n");
   _printf("Len:[%d]\n", len);
   printf("Len:[%d]\n", len2);
-  _printf("Unknown:[%r]\n");
+  _printf("Unknown:[%r]\n","look this string rev");
   printf("Unknown:[%r]\n");
+  _printf("Rot:[%R]\n","string will be rot ok2");
   _printf("S:[%S]\n", "\n");
   return (0);
 }

@@ -24,6 +24,8 @@ int paddr(va_list args, char *buffer, int *buf_i, int *total);
 int pspec(va_list args, char *buffer, int *buf_i, int *total);
 int buffer_write(char *buffer, int *buf_i, char c, int *total);
 int buffer_nil(char *buffer, int *buf_i, int *total);
+int prev(va_list args, char *buffer, int *buf_i, int *total);
+int prot13(va_list args, char *buffer, int *buf_i, int *total);
 
 /**
  * Print_Numbers Functions
@@ -37,6 +39,7 @@ int print_bin(char *buffer, int *buf_i,unsigned int n, int *total);
 int print_oct(char *buffer, int *buf_i,unsigned int n, int *total);
 int print_addr(char *buffer, int *buf_i, void *addr, int *total);
 int print_schar(char *buffer, int *buf_i, unsigned char c, int *total);
+int print_rot13(char *buffer, int *buf_i, char *c, int *total);
 
 /**
  * Struct Mapping Specifiers to Handlers
