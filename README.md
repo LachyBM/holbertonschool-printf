@@ -22,10 +22,10 @@ Returns (-1) on error.
 | `%i`      | Prints a signed integer (identical to `%d`)      | `_printf("Length:[%d, %i]\n", len, len);`              | `Length:[39, 39]`                           |
 | `%u`      | Prints a signed integer (identical to `%u`)      | `_printf("Unsigned:[%u]\n", ui);`                      | `Unsigned:[2147484671]`                     |
 | `%x, %X`      | Prints a signed integer (identical to `%x`)  | `_printf("Unsigned hexadecimal:[%x, %X]\n", ui, ui);`  | `Unsigned hexadecimal:[800003ff, 800003FF]` |
-***| `%b`      | Prints a signed integer (identical to `%b`)   | `_printf("%b", -7);`                                   | `-7`                                        |
-| `%o`      | Prints a signed integer (identical to `%o`)      | `_printf("Unsigned octal:[%o]\n", ui);`                | `Unsigned octal:[20000001777]`              |
-| `%p`      | Prints a signed integer (identical to `%p`)      | `_printf("Address:[%p]\n", addr);`                     | `Address:[0x7ffe637541f0]`                  |
-***| `%S`      | Prints a signed integer (identical to `%S`)   | `_printf("%S", -7);`                                   | `-7`                                        |
-***| `%R`      | Prints a signed integer (identical to `%R`)   | `_printf("%R", -7);`                                   | `-7`                                        |
-| `%r`      | Prints a signed integer (identical to `%r`)      | `_printf("Unknown:[%r]\n");`                           | `Unknown:[%r]`                              |
+| `%b`      | Prints a binary (identical to `%b`)               | `_printf("%b", 7);`                                   | `111`                                        |
+| `%o`      | Prints a unsigned octal (identical to `%o`)      | `_printf("Unsigned octal:[%o]\n", ui);`                | `Unsigned octal:[20000001777]`              |
+| `%p`      | Prints a address as a hex (identical to `%p`)      | `_printf("Address:[%p]\n", addr);`                     | `Address:[0x7ffe637541f0]`                  |
+| `%S`      | Prints a hex code of non printable chars (identical to `%S`)   | `_printf("%S", "\n");`                                   | `x0A`                                        |
+| `%R`      | Prints a string of characters in rot13 (identical to `%R`)   | `_printf("%R", "this is what rot13 does");             | `guvf vg jung ebg13 qbrf`                   |
+| `%r`      | Prints a string of characters in reverse (identical to `%r`)      | `_printf("Unknown:[%r]\n", "this is the reverse);      | `Unknown:[esrever eht si siht]`             |
 ***| `\0`      | Prints a signed integer (identical to `\0`)   | `_printfUnknown:[%r];`                                 | `Unknown:[%r]`                              |
