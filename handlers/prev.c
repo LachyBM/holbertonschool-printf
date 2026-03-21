@@ -12,10 +12,13 @@ int prev(va_list args, char *buffer, int *buf_i, int *total)
     return (0);
   }
 
-  i = len - 1;
+  if (str[0] == '\0')
+	  return(0);
+
   while (str[len])
   {
-    len++;
+      len++;
+      i = len -1;
   }
   while (i >= 0)
     {

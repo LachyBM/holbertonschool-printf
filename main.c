@@ -40,6 +40,8 @@ int main(void)
   printf("Len:[%d]\n", len2);
   _printf("Unknown:[%r]\n","look this string rev");
   _printf("Complete the sentence: You %r nothing, Jon Snow.\n", "");
+  _printf("%r", "\nThis sentence is retrieved from va_args!");
+  _printf("Complete the sentence: You %r nothing, Jon Snow.\n", "know");
   printf("Unknown:[%r]\n");
   _printf("Rot:[%R]\n","string will be rot ok2");
   _printf("S:[%S]\n", "\n");
