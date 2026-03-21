@@ -1,14 +1,18 @@
-## _printf
+# _printf
 
-A simplified printf from <stdlib>.
+A simplified printf from \<stdlib\>.
 
 ## Description
 
 _printf is an integer function which takes variadic input, and writes buffered and formatted output to stdout.
 
 ## Usage
-_printf("This is a %s function", "printf");
-output: This is a printf function
+
+### Input
+![Alt text](./images/printfINPUT.png)
+
+### Output
+![Alt text](./images/printfOUTPUT.png)
 
 ## Return Value
 
@@ -24,7 +28,7 @@ Returns (-1) on error.
 | `%%`      | Prints a literal percent sign                    | `_printf("Percent:[%%]\n");`                           | `Percent:[%]`                               |
 | `%d`      | Prints a signed decimal integer                  | `_printf("Negative:[%d]\n", -762534);`                 | `Negative:[-762534]`                        |
 | `%i`      | Prints a signed integer (identical to `%d`)      | `_printf("Length:[%d, %i]\n", len, len);`              | `Length:[39, 39]`                           |
-| `%u`      | Prints a signed integer (identical to `%u`)      | `_printf("Unsigned:[%u]\n", ui);`                      | `Unsigned:[2147484671]`                     |
+| `%u`      | Prints a unsigned integer (identical to `%u`)      | `_printf("Unsigned:[%u]\n", ui);`                      | `Unsigned:[2147484671]`                     |
 | `%x, %X`      | Prints a signed integer (identical to `%x`)  | `_printf("Unsigned hexadecimal:[%x, %X]\n", ui, ui);`  | `Unsigned hexadecimal:[800003ff, 800003FF]` |
 | `%b`      | Prints a binary (identical to `%b`)               | `_printf("%b", 7);`                                   | `111`                                        |
 | `%o`      | Prints a unsigned octal (identical to `%o`)      | `_printf("Unsigned octal:[%o]\n", ui);`                | `Unsigned octal:[20000001777]`              |
@@ -38,7 +42,26 @@ Returns (-1) on error.
 - Flags characters (  +,  space,  #,  0,  -) 
 - Length modifiers ( l,  h)
 - Field width
-- Precision 
+- Precision
+
+## Files/Folders
+### _printf
+- details
+
+### includes.c
+- details
+
+### main.c
+- details
+
+### main.h
+- details
+
+### helpers folder
+- details
+
+### handlers folder
+- details
 
 ## Authors
 Brendan - [Github](https://github.com/bfrasholb) 
