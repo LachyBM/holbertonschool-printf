@@ -2,9 +2,13 @@
 
 A simplified printf from <stdlib>.
 
-##Description
+## Description
 
 _printf is an integer function which takes variadic input, and writes buffered and formatted output to stdout.
+
+## Usage
+_printf("This is a %s function", "printf");
+output: This is a printf function
 
 ## Return Value
 
@@ -29,3 +33,14 @@ Returns (-1) on error.
 | `%R`      | Prints a string of characters in rot13 (identical to `%R`)   | `_printf("%R", "this is what rot13 does");             | `guvf vg jung ebg13 qbrf`                   |
 | `%r`      | Prints a string of characters in reverse (identical to `%r`)      | `_printf("Unknown:[%r]\n", "this is the reverse);      | `Unknown:[esrever eht si siht]`             |
 ***| `\0`      | Prints a signed integer (identical to `\0`)   | `_printfUnknown:[%r];`                                 | `Unknown:[%r]`                              |
+
+## Limitations/Missing
+- Flags characters (  +,  space,  #,  0,  -) 
+- Length modifiers ( l,  h)
+- Field width
+- Precision 
+
+## Authors
+Brendan - [Github](https://github.com/bfrasholb) 
+
+Lachlan - [Github](https://github.com/LachyBM)
