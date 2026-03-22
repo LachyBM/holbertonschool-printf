@@ -52,7 +52,7 @@ Returns (-1) on error.
 - Header file, its defines the struct and includes the libary custom
 
 ### main.c
-- details
+- Printt/_printf examples
 
 ### main.h
 - Header file containing prototypes
