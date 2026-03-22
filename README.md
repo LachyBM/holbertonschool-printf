@@ -46,22 +46,22 @@ Returns (-1) on error.
 
 ## Files/Folders
 ### _printf
-- details
+- Custom verision of printf, It writes the output as it would with printf, returning the total number of characters printed
 
 ### includes.c
-- details
+- Header file, its defines the struct and includes the libary custom
 
 ### main.c
 - details
 
 ### main.h
-- details
+- Header file containing prototypes
 
 ### helpers folder
-- details
+- Helpers library, it contains each individual printing function
 
 ### handlers folder
-- details
+- Handlers library, it contains each individual handler functions 
 
 ## Authors
 Brendan - [Github](https://github.com/bfrasholb) 
