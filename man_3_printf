@@ -24,15 +24,22 @@ Specifier	Description
 %p	Print a pointer (memory address) in hexadecimal with 0x prefix. If pointer is NULL, prints (nil).
 %%	Print a literal percent sign.
 %r  Print a string in reverse. If the string is NULL, prints (nil)
-%R  Print a string in rot13 form. If the string is NULL, prints (nil).
+%R  Print a string in ROT13 form. If the string is NULL, prints (nil).
 Any other % followed by a character	Prints the literal % and the character (for unknown specifiers).
-Note: This printf does not support Flags, Length modifiers, Field width, Percision.
 
-Examples
+
+LIMITATIONS
+This printf does not support
+-Flags
+-Length modifiers
+-Field width
+-Percision
+
+EXAMPLES
 _printf("Print Char: %c\n", 'A');
 _printf("Print String: %s\n", "String");
-_printf("Print Int: %i", "100"); 
-_printf("Print leteral Percent: %%\n)";
+_printf("Print Int: %i", 100); 
+_printf("Print Literal Percent: %%\n");
 
 AUTHORS
 Brendan
